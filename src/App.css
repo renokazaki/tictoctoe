@@ -1,0 +1,34 @@
+.con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+.rectangle{
+  height:100px;
+  width:100px;
+  background-color: aquamarine;
+  border:1px solid black;
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circleText{
+  font-size: 70px;
+}
+
+p{
+  font-size: 10px;
+}
+button {
+  height: 20px;
+}
