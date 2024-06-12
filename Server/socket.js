@@ -6,12 +6,14 @@ const server = http.createServer(app);
 const {Server} = require("socket.io");
 const io = new Server(server,{
     cors:{
-        origin :["http://localhost:3000"]
+        origin: "*",
+        methods: ["GET", "POST"]
     }
 });
 
 
-const PORT = 5000;
+// const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 //クライアントと通信
@@ -27,8 +29,12 @@ io.on("connection" ,(socket) => {
         console.log(user)
         io.emit("user",user);
     })
-
-    socket.on("connection" ,() => {
+    
+    socket.on("reset", user => {
+        console.log("リセットイベント受信");
+        io.emit("reset", user);
+    })
+    socket.on("disconnect" ,() => {
         console.log("クライアントとの接続が切れました");
     })
 });
