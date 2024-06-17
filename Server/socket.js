@@ -6,14 +6,15 @@ const server = http.createServer(app);
 const {Server} = require("socket.io");
 const io = new Server(server,{
     cors:{
-        origin: "*",
+        origin: "https://https://tictoctoe-1.onrender.com/",  // デプロイしたアプリのドメイン
         methods: ["GET", "POST"]
     }
 });
 
 
 // const PORT = 5000;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
+console.log(`Using port: ${PORT}`);  // 追加: 環境変数の確認
 
 
 //クライアントと通信
