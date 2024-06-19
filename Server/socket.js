@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 
+/////追加
+const path = require("path");
+//==================
+
+
 const http = require("http");
 const server = http.createServer(app);
 const {Server} = require("socket.io");
@@ -41,6 +46,15 @@ io.on("connection" ,(socket) => {
     })
 });
 
+
+//追加
+if (process.env.NODE_ENV === "production") {
+    app.get("*", (req, res) => {
+      const indexFile = path.join(__dirname, "dist", "index.html");
+      return res.sendFile(indexFile);
+    });
+  }
+//==========================--
 
 server.listen(port,()=> console.log(`Listening to port aaaaaaaaaaaaaaaaaaaaaaaaa`))
 
