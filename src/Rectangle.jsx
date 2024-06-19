@@ -38,7 +38,6 @@ export const Rectangle = () => {
       setCurrentUser(currentUser === "user1" ? "user2" : "user1");
       socket.current.emit("value", newTouchedIndices);
       socket.current.emit("user", currentUser === "user1" ? "user2" : "user1");
-      socket.emit("value", newTouchedIndices);
     }
   };
 
