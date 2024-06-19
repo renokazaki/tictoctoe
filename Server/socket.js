@@ -6,7 +6,7 @@ const server = http.createServer(app);
 const {Server} = require("socket.io");
 const io = new Server(server,{
     cors:{
-        origin: "https://https://tictoctoe-1.onrender.com/",  // デプロイしたアプリのドメイン
+        origin: "https://tictoctoe-1.onrender.com/",  // デプロイしたアプリのドメイン
         methods: ["GET", "POST"]
     }
 });
@@ -42,5 +42,5 @@ io.on("connection" ,(socket) => {
 });
 
 
-server.listen(process.env.PORT || 3000,()=> console.log(`Listening to port aaaaaaaaaaaaaaaaaaaaaaaaa`))
+app.listen(process.env.PORT || 3000,()=> console.log(`Listening to port aaaaaaaaaaaaaaaaaaaaaaaaa`))
 
