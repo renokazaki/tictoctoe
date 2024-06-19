@@ -13,7 +13,7 @@ const io = new Server(server,{
 
 
 // const PORT = 5000;
-// const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 // console.log(`Using port: ${PORT}`);  // 追加: 環境変数の確認
 
@@ -42,5 +42,5 @@ io.on("connection" ,(socket) => {
 });
 
 
-app.listen(process.env.PORT || 3000,()=> console.log(`Listening to port aaaaaaaaaaaaaaaaaaaaaaaaa`))
+server.listen(port,()=> console.log(`Listening to port aaaaaaaaaaaaaaaaaaaaaaaaa`))
 
